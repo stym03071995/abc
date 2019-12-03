@@ -1,0 +1,35 @@
+WARN  2019-11-30 01:40:47 xim.controller XIMController.cpp:103 IBus natively supported.
+WARN  2019-11-30 01:40:48 unity.dash.gsettingsscopereader GSettingsScopes.cpp:108 Error fetching protocol metadata for scope: social.scope : Valid key file could not be found in search dirs
+WARN  2019-11-30 01:40:50 unity.glib.dbus.server GLibDBusServer.cpp:593 Can't register object 'com.canonical.Unity.Launcher' yet as we don't have a connection, waiting for it...
+WARN  2019-11-30 01:40:51 unity.glib.dbus.server GLibDBusServer.cpp:593 Can't register object 'com.canonical.Unity.Dash' yet as we don't have a connection, waiting for it...
+WARN  2019-11-30 01:40:56 unity.glib.dbus.server GLibDBusServer.cpp:593 Can't register object 'com.canonical.Unity.Session' yet as we don't have a connection, waiting for it...
+WARN  2019-11-30 01:40:56 unity.glib.dbus.server GLibDBusServer.cpp:593 Can't register object 'org.gnome.ScreenSaver' yet as we don't have a connection, waiting for it...
+compiz (core) - Warn: Attempted to restack relative to 0x2400006 which is not a child of the root window or a window compiz owns
+WARN  2019-11-30 01:40:58 unityo (appinfo2) <unknown>:0 g_settings_set_value: value for key 'visual-bell-type' in schema 'org.gnome.desktop.wm.preferences' is outside of valid range
+WARN  2019-11-30 01:40:59 unityo (appinfo2) <unknown>:0 g_settings_set_value: value for key 'visual-bell-type' in schema 'org.gnome.desktop.wm.preferences' is outside of valid range
+WARN  2019-11-30 01:40:59 unityo (appinfo2) <unknown>:0 g_settings_set_value: value for key 'visual-bell-type' in schema 'org.gnome.desktop.wm.preferences' is outside of valid range
+ERROR 2019-11-30 01:40:59 unity.glib.dbus.server GLibDBusServer.cpp:538 DBus name lost 'org.gnome.Shell'
+ERROR 2019-11-30 01:40:59 unity.glib.dbus.server GLibDBusServer.cpp:538 DBus name lost 'com.canonical.Unity'
+WARN  2019-11-30 01:40:59 unity.key.gnome.grabber GnomeKeyGrabber.cpp:108 Trying to grab a disabled action, we skip it
+WARN  2019-11-30 01:40:59 unity.key.gnome.grabber GnomeKeyGrabber.cpp:108 Trying to grab a disabled action, we skip it
+WARN  2019-11-30 01:40:59 unity.key.gnome.grabber GnomeKeyGrabber.cpp:108 Trying to grab a disabled action, we skip it
+WARN  2019-11-30 01:40:59 unity.key.gnome.grabber GnomeKeyGrabber.cpp:108 Trying to grab a disabled action, we skip it
+WARN  2019-11-30 01:40:59 unity.key.gnome.grabber GnomeKeyGrabber.cpp:108 Trying to grab a disabled action, we skip it
+WARN  2019-11-30 01:40:59 unity.key.gnome.grabber GnomeKeyGrabber.cpp:108 Trying to grab a disabled action, we skip it
+WARN  2019-11-30 01:40:59 unity.key.gnome.grabber GnomeKeyGrabber.cpp:108 Trying to grab a disabled action, we skip it
+WARN  2019-11-30 01:40:59 unity.key.gnome.grabber GnomeKeyGrabber.cpp:108 Trying to grab a disabled action, we skip it
+WARN  2019-11-30 01:40:59 unity.key.gnome.grabber GnomeKeyGrabber.cpp:108 Trying to grab a disabled action, we skip it
+WARN  2019-11-30 01:40:59 unity.key.gnome.grabber GnomeKeyGrabber.cpp:108 Trying to grab a disabled action, we skip it
+WARN  2019-11-30 01:41:43 unity.iconloader IconLoader.cpp:756 Unable to load icon file:/// at size -1x22: Can't open directory
+failed to create drawable
+compiz (core) - Warn: glXCreatePixmap failed
+compiz (core) - Warn: Couldn't bind background pixmap 0x2a00001 to texture
+failed to create drawable
+compiz (core) - Warn: glXCreatePixmap failed
+compiz (core) - Warn: Couldn't bind background pixmap 0x3800001 to texture
+failed to create drawable
+compiz (core) - Warn: glXCreatePixmap failed
+compiz (core) - Warn: Couldn't bind background pixmap 0x2a00001 to texture
+failed to create drawable
+compiz (core) - Warn: glXCreatePixmap failed
+compiz (core) - Warn: Couldn't bind background pixmap 0x3800001 to texture
