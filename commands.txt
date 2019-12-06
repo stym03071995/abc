@@ -1,0 +1,172 @@
+﻿****Docker installation*****
+apt-get update
+apt install docker*
+apt-get update
+systemctl start docker
+systemctl enable docker
+systemctl status docker -----(active)
+q to quit
+docker info
+docker run hello-world (Hello from docker)
+docker search centos ---(to search an image)
+docker pull centos ---(to pull centos image)
+docker run centos -----(to run the image)
+docker images
+To run an image inside container
+docker run -it centos -----o/p in some numbers @729bd16d4f80
+yum install mariadb-server-----(to install server into centOs - yum cz we are into centos image )
+exit ----(to save the changes)
+docker commit -m "added mariadb-server" -a "somename" 59839a1b7de2 root/centos-mariadb
+---(the id should be the one you get after run -it command eg 729bd16d4f80) -----(the image is
+saved locally on the system)
+docker images -----(list of images)
+#docker ps ----(active container)
+#docker ps -a----(all container)
+#docker ps -l ------("its l for love, not 1" To view the latest container you created)
+docker stop 729bd16d4f80 -----(the last one should be container id)
+--------------------------------------------------------------docker end---------------------------
+***GIT***
+sudo su
+apt-get install git-core
+git --version
+Create a folder anywhere on machine and copy any code or a simple text file to it.
+then set user name and email using the below syntax
+git config --global user.name "ariush"
+git config --global user.email "ariushcdac@gmail
+to avoid merge
+git config --global branch.autosetuprebase always
+color changes on git
+git config --global color.ui true
+git config --global color.status auto
+git config --global color.branch auto
+To verify settings
+git config --list
+git init -----(cretes .git file)
+Add file/folder
+git add foldername/file/path with foldername
+git status
+git commit
+git remote add origin <link of your repository on active git account>
+git pull origin master
+git push <same link which was used to add origin>
++You can check what your current branch is by using the command:
+git branch
++To create a new branch we use the following command:
+git branch <branch-name>
+git checkout <branch_name> and then
+git commit
+git merge branch-name----------(to merge the git branches)
+----------------------------------------------------------------GIT end-------------------------
+*****DOCKER SWARM****
+1. We need 2 or more system as required to start the swarm.
+Configure:
+On manager and workers : ifconfig to fetch the ip-address ->the one under: ens33
+Then : gedit /etc/hosts
+a new file will open -> copy the respective ip's to the file as given below:
+192.168.1.103 dockermanager
+192.168.1.107 dockerworker1
+192.168.1.108 dockerworker2 -----------------(make sure the config is proper and on all the
+systems)
+To check:
+ping dockermanager from both the worker and ping dockerworker1 and ping dockerworker2
+from manager.
+apt-get update on all 3 systems.
+apt-get install docker* on all system ----(if docker is already installed skip this step)
+check docker version by docker --version
+systemctl start docker
+systemctl enable docker
+systemctl status docker
+To configure docker to run as a normal user or non-root user, run the following command:
+usermod -aG docker ankush
+usermod -aG docker supriya
+usermod -aG docker arjit----------------(steps can be skipped)
+To verify the usermod command:
+# su - ankush
+$ docker run hello-world
+Initialize the Docker Swarm mode by running the following docker command on the
+'dockermanager' node.
+$ docker swarm init --advertise-addr 192.168.1.103
+A token will be generated, please save it.
+Also with the same command we will receive the new command to join the workers on the
+manager terminal just copy it and paste it to the worker nodes.
+eg: docker swarm join --token
+SWMTKN-1-4qg01dunpuv9oser7gkrb3ez1my4krhi6sdgm8p71n4xb2oyaq-1qucuvckp51q6y7st4
+o941npa 192.168.203.142:2377 ------(this will be created once a manager node is created)
+To see the node status:
+docker node ls
+If at any time, you lost your join token, it can be retrieved by running the following command on
+the manager node for the manager token:
+$ docker swarm join-token manager -q
+for workers
+docker swarm join-token worker -q
+To create a service:
+docker service create --name myWeb1 --publish 8081:80 --replicas 2 nginx ----(only on manager
+node)
+List the newly deployed service on Swarm Cluster.
+$ docker service ls ---(on manager only)
+docker service ps myWeb1
+To verify just copy the url on the browser of manager system: http://dockermanager:8081
+docker service scale my-web1=3 ------------------(to make 3 replicas)
+docker service inspect myWeb1----- (command to check the extended details of a deployed
+service on swarm)
+----------------------------------------------------------------------------DOCKER SWARM
+END-------------------------------
+*****JENKINS*****
+wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+This will return ok if worked fine
+echo deb http://pkg.jenkins.io/debian-stable binary/| sudo tee /etc/apt/sources.list.d/jenkins.list
+sudo apt-get update
+apt install openjdk-8-jre
+apt-get install jenkins
+systemctl start jenkins
+systemctl status jenkins
+Now open the browser on same machine use url : http://192.168.203.144
+(system_ip_addres):8080
+Password under:
+cat /var/lib/jenkins/secrets/initialAdminPassword
+eg: 3d3872865e7648ec88580ff0d49774cc
+We’ll click the “Install suggested plugins” option, which will immediately begin the installation
+process.
+after installation is complete enter the user detail and save and continue ....
+Jenkins is ready!!!!!!
+Click “Start using Jenkins” to visit the main Jenkins dashboard :
+At this point, Jenkins has been successfully installed.
+Click on new item
+
+sudo apt-get install git-core
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+apt-get update
+apt-get install docker.io
+docker --version
+mkdir dockerdata
+cd dockerdata
+gedit Dockerfile
+--
+FROM ubuntu
+RUN apt update -y && apt upgrade -y
+RUN mkdir /bushra
+COPY test /bushra/
+CMD ["/bushra/a.out"]
+--
+mkdir test
+cd test
+gedit code.c
+gcc code.c
+cd..
+docker build -t anyname:v1 .
+docker run anyname:v1
+
+--------------
+to remove docker
+apt-get purge docker.io
+for broken package error
+sudo dpkg --configure -a
+to install jre
+sudo apt-get install openjdk-8-jre
+ps aux | grep apt
+**
+for locked resources
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
